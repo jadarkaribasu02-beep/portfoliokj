@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karibasu Jadar | Full Stack Developer & Problem Solver</title>
+  <meta name="description" content="Portfolio of Karibasu Jadar - Full Stack Developer, Software Engineer, and Problem Solver specializing in Web Technologies, Java, C/C++, JavaScript, React, and Node.js." />
+
+  <!--=============== FAVICON ===============-->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+
+  <!--=============== GOOGLE FONTS ===============-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!--=============== BOXICONS & FONTAWESOME ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!--=============== MAIN STYLES ===============-->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!--=============== CRAZY COOL PRELOADER ===============-->
+  <div id="preloader" class="preloader">
+    <div class="preloader__bg-glow"></div>
+    <div class="preloader__content">
+      <div class="preloader__logo-box">
+        <span class="preloader__logo">KJ</span>
+        <div class="preloader__ring"></div>
+        <div class="preloader__ring preloader__ring--outer"></div>
+      </div>
+      <div class="preloader__status">
+        <span class="preloader__text" id="preloader-text">INITIALIZING EXPERIENCE...</span>
+        <div class="preloader__bar">
+          <div class="preloader__progress" id="preloader-progress"></div>
+        </div>
+        <span class="preloader__percent" id="preloader-percent">0%</span>
+      </div>
+
+      <!-- Cyber Holographic Orb Visualizer -->
+      <div class="preloader__hologram-box">
+        <canvas id="preloader-hologram" width="280" height="130"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor Follower -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!--=============== HEADER / NAVBAR ===============-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <span class="logo__badge">KJ</span>
+        <span class="logo__text">Karibasu Jadar</span>
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">Skills</a>
+          </li>
+          <li class="nav__item">
+            <a href="#projects" class="nav__link">Projects</a>
+          </li>
+          <li class="nav__item">
+            <a href="#education" class="nav__link">Education</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav__actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Mode">
+          <i class="bx bx-moon" id="theme-icon"></i>
+        </button>
+        <button class="btn btn--outline" id="open-resume-btn">
+          <span>View Resume</span>
+          <i class="bx bx-file font-icon"></i>
+        </button>
+        <div class="hamburger" id="header-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!--=============== HERO SECTION ===============-->
+    <section class="hero section" id="home">
+      <div class="hero__bg-glow hero__bg-glow--1"></div>
+      <div class="hero__bg-glow hero__bg-glow--2"></div>
+      <div class="hero__grid-overlay"></div>
+      <canvas id="hero-particles" class="hero__particles"></canvas>
+
+      <div class="hero__container container">
+        
+        <!-- Left Side Content (Name, Role, Intro, Colored Socials) -->
+        <div class="hero__left-content">
+          <h1 class="hero__title">KARIBASU JADAR</h1>
+          <h2 class="hero__subtitle">FULL STACK DEVELOPER</h2>
+
+          <p class="hero__description">
+            Hey there! I'm a <strong>Full Stack Developer & Problem Solver</strong> building high-performance web applications and digital solutions.
+          </p>
+
+          <div class="hero__socials">
+            <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="social-icon social-icon--github" title="GitHub">
+              <i class="bx bxl-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/karibasu-jadar-a213b23b3/" target="_blank" rel="noopener" class="social-icon social-icon--linkedin" title="LinkedIn">
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/karibasu02" target="_blank" rel="noopener" class="social-icon social-icon--instagram" title="Instagram (@karibasu02)">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="mailto:jadarkaribasu02@gmail.com" class="social-icon social-icon--email" title="Email">
+              <i class="bx bx-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Full Right Side Photo Component -->
+        <div class="hero__right-image">
+          <div class="hero__image-glow"></div>
+          <div class="hero__image-frame">
+            <img src="./assets/hero-photo.png" alt="Karibasu Jadar" class="hero__img" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Infinite Marquee Band (Tech Stack Ticker) -->
+      <div class="hero__ticker">
+        <div class="ticker__track">
+          <!-- First Set -->
+          <div class="ticker__item"><i class="fa-brands fa-java"></i> Java</div>
+          <div class="ticker__item"><i class="fa-brands fa-python"></i> Python</div>
+          <div class="ticker__item"><i class="fa-solid fa-code"></i> C / C++</div>
+          <div class="ticker__item"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+          <div class="ticker__item"><i class="fa-brands fa-react"></i> React.js</div>
+          <div class="ticker__item"><i class="fa-brands fa-node-js"></i> Node.js</div>
+          <div class="ticker__item"><i class="fa-solid fa-server"></i> Express.js</div>
+          <div class="ticker__item"><i class="fa-brands fa-html5"></i> HTML5</div>
+          <div class="ticker__item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+          <div class="ticker__item"><i class="fa-brands fa-bootstrap"></i> Tailwind / Bootstrap</div>
+          <div class="ticker__item"><i class="fa-solid fa-database"></i> MySQL</div>
+          <div class="ticker__item"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+
+          <!-- Duplicate Set for Seamless Loop -->
+          <div class="ticker__item"><i class="fa-brands fa-java"></i> Java</div>
+          <div class="ticker__item"><i class="fa-brands fa-python"></i> Python</div>
+          <div class="ticker__item"><i class="fa-solid fa-code"></i> C / C++</div>
+          <div class="ticker__item"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+          <div class="ticker__item"><i class="fa-brands fa-react"></i> React.js</div>
+          <div class="ticker__item"><i class="fa-brands fa-node-js"></i> Node.js</div>
+          <div class="ticker__item"><i class="fa-solid fa-server"></i> Express.js</div>
+          <div class="ticker__item"><i class="fa-brands fa-html5"></i> HTML5</div>
+          <div class="ticker__item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+          <div class="ticker__item"><i class="fa-brands fa-bootstrap"></i> Tailwind / Bootstrap</div>
+          <div class="ticker__item"><i class="fa-solid fa-database"></i> MySQL</div>
+          <div class="ticker__item"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== ABOUT SECTION ===============-->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">01 // Who I Am</span>
+          <h2 class="section__title">About Me</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__card glass-card reveal-left">
+            <div class="about__icon-box">
+              <i class="bx bx-terminal"></i>
+            </div>
+            <h3>Developer & Problem Solver</h3>
+            <p>
+              I am a dedicated Full Stack Developer with a deep passion for writing clean, optimized code and solving complex algorithmic challenges. My expertise spans building dynamic front-end interfaces, scalable back-end APIs, and robust software solutions.
+            </p>
+            <p>
+              With hands-on experience in Java, C/C++, JavaScript, Node.js, and React, I combine logical thinking with modern UI design principles to create digital products that feel smooth and responsive.
+            </p>
+
+            <div class="about__highlights">
+              <div class="highlight-item">
+                <i class="bx bx-check-circle"></i>
+                <span>Data Structures & Algorithms Expert</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bx bx-check-circle"></i>
+                <span>Full Stack Web Application Development</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bx bx-check-circle"></i>
+                <span>Responsive & Modern Animated UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__stats reveal-right">
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="100">0+</div>
+              <div class="stat-label">Problem Solving Programs (Java/C)</div>
+            </div>
+
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="12">0+</div>
+              <div class="stat-label">Web & Software Projects</div>
+            </div>
+
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="10">0+</div>
+              <div class="stat-label">Technologies & Frameworks</div>
+            </div>
+
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-target="100">0%</div>
+              <div class="stat-label">Commitment to Clean Code</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== SKILLS & TOOLS SECTION ===============-->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">02 // Technical Stack</span>
+          <h2 class="section__title">Skills & Technologies</h2>
+        </div>
+
+        <div class="skills__categories">
+          <!-- Programming Languages -->
+          <div class="skills__card glass-card reveal-up">
+            <div class="skills__header">
+              <i class="bx bx-code-alt skills__icon"></i>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skills__list">
+              <div class="skill-tag"><i class="fa-brands fa-java color-java"></i> Java</div>
+              <div class="skill-tag"><i class="fa-solid fa-code color-c"></i> C</div>
+              <div class="skill-tag"><i class="fa-solid fa-square-code color-cpp"></i> C++</div>
+              <div class="skill-tag"><i class="fa-brands fa-js color-js"></i> JavaScript (ES6+)</div>
+              <div class="skill-tag"><i class="fa-brands fa-python color-python"></i> Python</div>
+              <div class="skill-tag"><i class="fa-solid fa-database color-sql"></i> SQL</div>
+            </div>
+          </div>
+
+          <!-- Web Development -->
+          <div class="skills__card glass-card reveal-up" style="animation-delay: 0.1s;">
+            <div class="skills__header">
+              <i class="bx bx-layer skills__icon"></i>
+              <h3>Frontend & UI</h3>
+            </div>
+            <div class="skills__list">
+              <div class="skill-tag"><i class="fa-brands fa-react color-react"></i> React.js</div>
+              <div class="skill-tag"><i class="fa-brands fa-html5 color-html"></i> HTML5</div>
+              <div class="skill-tag"><i class="fa-brands fa-css3-alt color-css"></i> CSS3 / SCSS</div>
+              <div class="skill-tag"><i class="fa-solid fa-wind color-tailwind"></i> Tailwind CSS</div>
+              <div class="skill-tag"><i class="fa-brands fa-bootstrap color-bootstrap"></i> Bootstrap</div>
+              <div class="skill-tag"><i class="bx bx-palette color-design"></i> Responsive UI/UX</div>
+            </div>
+          </div>
+
+          <!-- Backend & Database -->
+          <div class="skills__card glass-card reveal-up" style="animation-delay: 0.2s;">
+            <div class="skills__header">
+              <i class="bx bx-server skills__icon"></i>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skills__list">
+              <div class="skill-tag"><i class="fa-brands fa-node-js color-node"></i> Node.js</div>
+              <div class="skill-tag"><i class="fa-solid fa-gears color-express"></i> Express.js</div>
+              <div class="skill-tag"><i class="fa-solid fa-network-wired color-api"></i> RESTful APIs</div>
+              <div class="skill-tag"><i class="fa-solid fa-database color-mysql"></i> MySQL</div>
+              <div class="skill-tag"><i class="bx bx-key color-jwt"></i> Authentication & Security</div>
+            </div>
+          </div>
+
+          <!-- Developer Tools -->
+          <div class="skills__card glass-card reveal-up" style="animation-delay: 0.3s;">
+            <div class="skills__header">
+              <i class="bx bx-wrench skills__icon"></i>
+              <h3>Developer Tools</h3>
+            </div>
+            <div class="skills__list">
+              <div class="skill-tag"><i class="fa-brands fa-git-alt color-git"></i> Git</div>
+              <div class="skill-tag"><i class="fa-brands fa-github color-github"></i> GitHub</div>
+              <div class="skill-tag"><i class="fa-solid fa-paper-plane color-postman"></i> Postman</div>
+              <div class="skill-tag"><i class="bx bxl-visual-studio color-vscode"></i> VS Code</div>
+              <div class="skill-tag"><i class="fa-brands fa-linux color-linux"></i> Linux / CLI</div>
+              <div class="skill-tag"><i class="fa-brands fa-npm color-npm"></i> NPM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--=============== PROJECTS SECTION ===============-->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">03 // Featured Work</span>
+          <h2 class="section__title">Projects & Repositories</h2>
+        </div>
+
+        <div class="projects__grid">
+          
+          <!-- Project Card 1 -->
+          <div class="project__card glass-card reveal-up">
+            <div class="project__badge">Problem Solving</div>
+            <div class="project__content">
+              <h3 class="project__title">100-Programs Build & Problem Solving</h3>
+              <p class="project__description">
+                A massive collection of 100+ algorithmic programs implemented in Java & C covering core Data Structures (Arrays, Linked Lists, Trees, Graphs, Sorting, Searching, and Dynamic Programming).
+              </p>
+              <div class="project__tech">
+                <span>Java</span>
+                <span>C</span>
+                <span>Algorithms</span>
+                <span>DSA</span>
+              </div>
+              <div class="project__links">
+                <a href="https://github.com/jadarkaribasu02-beep/100-Programs--build-problem-solving" target="_blank" rel="noopener" class="btn btn--sm btn--outline">
+                  <i class="bx bxl-github"></i> Code Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="project__card glass-card reveal-up" style="animation-delay: 0.1s;">
+            <div class="project__badge">Featured Portfolio</div>
+            <div class="project__content">
+              <h3 class="project__title">Futuristic Interactive Portfolio System</h3>
+              <p class="project__description">
+                High-end responsive personal portfolio featuring smooth glassmorphism styling, ambient radial glow effects, infinite tech ticker, dynamic cursor tracking, and interactive modal dialogs.
+              </p>
+              <div class="project__tech">
+                <span>HTML5</span>
+                <span>CSS3 Animations</span>
+                <span>JavaScript</span>
+                <span>UX/UI Design</span>
+              </div>
+              <div class="project__links">
+                <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="btn btn--sm btn--outline">
+                  <i class="bx bxl-github"></i> GitHub Profile
+                </a>
+                <a href="#home" class="btn btn--sm btn--primary">
+                  <i class="bx bx-show"></i> Live Preview
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="project__card glass-card reveal-up" style="animation-delay: 0.2s;">
+            <div class="project__badge">Full Stack App</div>
+            <div class="project__content">
+              <h3 class="project__title">Full-Stack Web Management System</h3>
+              <p class="project__description">
+                Interactive web platform engineered with Node.js, Express, MySQL, and React frontend. Features user authentication, CRUD operations, database queries, and responsive dashboards.
+              </p>
+              <div class="project__tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>MySQL</span>
+              </div>
+              <div class="project__links">
+                <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="btn btn--sm btn--outline">
+                  <i class="bx bxl-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div class="project__card glass-card reveal-up" style="animation-delay: 0.3s;">
+            <div class="project__badge">Developer Tools</div>
+            <div class="project__content">
+              <h3 class="project__title">Interactive Responsive Navigation Bar</h3>
+              <p class="project__description">
+                Custom reusable navigation system designed with glassmorphic blur effects, active link indicator auto-tracking, and mobile slide-out drawer menu.
+              </p>
+              <div class="project__tech">
+                <span>JavaScript</span>
+                <span>CSS Grid & Flexbox</span>
+                <span>Boxicons</span>
+              </div>
+              <div class="project__links">
+                <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="btn btn--sm btn--outline">
+                  <i class="bx bxl-github"></i> Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--=============== EDUCATION & EXPERIENCE SECTION ===============-->
+    <section class="education section" id="education">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">04 // My Background</span>
+          <h2 class="section__title">Education & Journey</h2>
+        </div>
+
+        <div class="timeline">
+          
+          <div class="timeline__item reveal-left">
+            <div class="timeline__dot"><i class="bx bx-graduation"></i></div>
+            <div class="timeline__content glass-card">
+              <span class="timeline__date">Present</span>
+              <h3 class="timeline__title">Computer Science & Engineering Studies</h3>
+              <span class="timeline__institution">Davanagere, Karnataka</span>
+              <p class="timeline__desc">
+                Focusing on core Computer Science fundamentals including Data Structures & Algorithms, Object-Oriented Programming (Java/C++), Operating Systems, Database Management Systems (MySQL), and Modern Web Development.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal-right">
+            <div class="timeline__dot"><i class="bx bx-code-block"></i></div>
+            <div class="timeline__content glass-card">
+              <span class="timeline__date">2024 - Present</span>
+              <h3 class="timeline__title">Active Open Source & Problem Solver</h3>
+              <span class="timeline__institution">GitHub (@jadarkaribasu02-beep)</span>
+              <p class="timeline__desc">
+                Author of 100+ problem solving programs in Java & C. Continuously building web applications, exploring full-stack frameworks (React, Node.js), and refining developer workflows.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal-left">
+            <div class="timeline__dot"><i class="bx bx-award"></i></div>
+            <div class="timeline__content glass-card">
+              <span class="timeline__date">Ongoing</span>
+              <h3 class="timeline__title">Full-Stack Web & Software Mastery</h3>
+              <span class="timeline__institution">Self-Directed & Hands-On Engineering</span>
+              <p class="timeline__desc">
+                Mastered modern front-end layout techniques, JavaScript ES6+ features, REST API building with Express/Node, and dark-mode futuristic UI styling.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--=============== CONTACT SECTION ===============-->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__subtitle">05 // Get In Touch</span>
+          <h2 class="section__title">Let's Connect & Work Together</h2>
+        </div>
+
+        <div class="contact__grid">
+          
+          <div class="contact__info glass-card reveal-left">
+            <h3>Contact Information</h3>
+            <p>
+              I am available for software engineering roles, full-stack developer positions, and freelance projects. Reach out via email or social networks!
+            </p>
+
+            <div class="contact__details">
+              <div class="contact__item">
+                <i class="bx bx-envelope contact__icon"></i>
+                <div>
+                  <span class="contact__label">Email</span>
+                  <a href="mailto:jadarkaribasu02@gmail.com" class="contact__val">jadarkaribasu02@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <i class="bx bxl-github contact__icon"></i>
+                <div>
+                  <span class="contact__label">GitHub</span>
+                  <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="contact__val">github.com/jadarkaribasu02-beep</a>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <i class="bx bxl-linkedin contact__icon"></i>
+                <div>
+                  <span class="contact__label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/karibasu-jadar-a213b23b3/" target="_blank" rel="noopener" class="contact__val">linkedin.com/in/karibasu-jadar</a>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <i class="bx bxl-instagram contact__icon"></i>
+                <div>
+                  <span class="contact__label">Instagram</span>
+                  <a href="https://www.instagram.com/karibasu02" target="_blank" rel="noopener" class="contact__val">instagram.com/karibasu02</a>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <i class="bx bx-map contact__icon"></i>
+                <div>
+                  <span class="contact__label">Location</span>
+                  <span class="contact__val">Karnataka, India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__socials">
+              <a href="https://github.com/jadarkaribasu02-beep" target="_blank" rel="noopener" class="social-btn social-icon--github"><i class="bx bxl-github"></i></a>
+              <a href="https://www.linkedin.com/in/karibasu-jadar-a213b23b3/" target="_blank" rel="noopener" class="social-btn social-icon--linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.instagram.com/karibasu02" target="_blank" rel="noopener" class="social-btn social-icon--instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact Form (Web3Forms Integrated) -->
+          <form class="contact__form glass-card reveal-right" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4f12a900-8da8-4725-90ab-bd569b18bfcc" />
+            <h3>Send a Message</h3>
+            
+            <div class="form__group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+
+            <div class="form__group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+
+            <div class="form__group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required />
+            </div>
+
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Hello Karibasu, I'd like to talk about..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>Send Message</span>
+              <i class="bx bx-send"></i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--=============== FOOTER ===============-->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <span class="logo__badge">KJ</span>
+        <span class="footer__title">Karibasu Jadar</span>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 Karibasu Jadar. Designed with precision & smooth animations.
+      </p>
+      <div class="footer__top">
+        <a href="#home" class="scroll-top-btn" title="Back to top">
+          <i class="bx bx-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!--=============== RESUME MODAL ===============-->
+  <div class="modal" id="resume-modal">
+    <div class="modal__overlay" id="resume-overlay"></div>
+    <div class="modal__card glass-card modal__card--lg">
+      <button class="modal__close" id="close-resume-modal"><i class="bx bx-x"></i></button>
+      <div class="resume__viewer">
+        <div class="resume__header">
+          <div>
+            <h2>Karibasu Jadar</h2>
+            <p class="resume__subtitle">Full Stack Developer & Software Engineer</p>
+          </div>
+          <div class="resume__actions">
+            <button class="btn btn--sm btn--primary" id="print-resume-btn"><i class="bx bx-printer"></i> Print / Save PDF</button>
+          </div>
+        </div>
+
+        <div class="resume__body">
+          <div class="resume__section">
+            <h4>Summary</h4>
+            <p>Passionate Full Stack Developer and Problem Solver with strong foundations in Java, C/C++, JavaScript, React, Node.js, and MySQL. Experienced in building responsive web applications and writing algorithmic code.</p>
+          </div>
+
+          <div class="resume__section">
+            <h4>Core Technical Skills</h4>
+            <ul>
+              <li><strong>Languages:</strong> Java, C, C++, JavaScript (ES6+), Python, SQL, HTML5, CSS3</li>
+              <li><strong>Frameworks & Libraries:</strong> React.js, Node.js, Express.js, Tailwind CSS, Bootstrap</li>
+              <li><strong>Databases & Tools:</strong> MySQL, REST APIs, Git, GitHub, Postman, Linux, VS Code</li>
+            </ul>
+          </div>
+
+          <div class="resume__section">
+            <h4>Key Projects</h4>
+            <ul>
+              <li><strong>100-Programs Build & Problem Solving:</strong> Developed 100+ programs solving algorithmic challenges in Java and C.</li>
+              <li><strong>Interactive Modern Portfolio:</strong> High-performance responsive developer site with smooth CSS animations and glassmorphism styling.</li>
+              <li><strong>Full Stack Web App:</strong> Built dynamic web interfaces connected to Node.js / Express backend with MySQL database integrations.</li>
+            </ul>
+          </div>
+
+          <div class="resume__section">
+            <h4>Education</h4>
+            <p><strong>Computer Science & Engineering Studies</strong> — Davanagere, Karnataka</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--=============== TOAST NOTIFICATION ===============-->
+  <div class="toast" id="toast">
+    <i class="bx bx-check-circle toast__icon"></i>
+    <span class="toast__msg" id="toast-msg">Message sent successfully!</span>
+  </div>
+
+  <!--=============== MAIN SCRIPT ===============-->
+  <script src="./script.js"></script>
+</body>
+</html>
