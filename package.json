@@ -1,0 +1,13 @@
+{
+  "name": "portfoliokj",
+  "version": "1.0.0",
+  "description": "Portfolio of Karibasu Jadar",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [],
+  "author": "Karibasu Jadar",
+  "license": "ISC"
+}

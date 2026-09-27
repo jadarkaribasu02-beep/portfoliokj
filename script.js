@@ -45,6 +45,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 28);
   }
 
+  /*=============== PRELOADER AUDIO PLAYER ===============*/
+  const preloaderAudio = document.getElementById('preloader-audio');
+  const audioBtn = document.getElementById('preloader-audio-btn');
+  const audioIcon = document.getElementById('preloader-audio-icon');
+  const audioStatus = document.getElementById('preloader-audio-status');
+  let audioPlayed = false;
+
+  if (preloaderAudio) {
+    preloaderAudio.volume = 0.75;
+
+    const playAudio = () => {
+      if (audioPlayed) return;
+      const promise = preloaderAudio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          audioPlayed = true;
+          if (audioStatus) audioStatus.textContent = 'SOUND PLAYING 🔊';
+          if (audioIcon) audioIcon.className = 'bx bx-volume-full';
+        }).catch(() => {
+          // Autoplay blocked by browser policy: play on first user interaction
+          if (audioStatus) audioStatus.textContent = 'CLICK FOR SOUND 🔊';
+          if (audioIcon) audioIcon.className = 'bx bx-volume-mute';
+
+          const handleUserInteraction = () => {
+            if (!audioPlayed && preloaderAudio.paused) {
+              preloaderAudio.play().then(() => {
+                audioPlayed = true;
+                if (audioStatus) audioStatus.textContent = 'SOUND PLAYING 🔊';
+                if (audioIcon) audioIcon.className = 'bx bx-volume-full';
+              }).catch(() => {});
+            }
+            removeInteractionListeners();
+          };
+
+          const removeInteractionListeners = () => {
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('touchstart', handleUserInteraction);
+            document.removeEventListener('keydown', handleUserInteraction);
+          };
+
+          document.addEventListener('click', handleUserInteraction, { once: true });
+          document.addEventListener('touchstart', handleUserInteraction, { once: true });
+          document.addEventListener('keydown', handleUserInteraction, { once: true });
+        });
+      }
+    };
+
+    // Trigger audio playback immediately on start of loading screen
+    playAudio();
+
+    // Sound toggle / play button
+    if (audioBtn) {
+      audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (preloaderAudio.paused) {
+          preloaderAudio.play().then(() => {
+            audioPlayed = true;
+            if (audioStatus) audioStatus.textContent = 'SOUND PLAYING 🔊';
+            if (audioIcon) audioIcon.className = 'bx bx-volume-full';
+          }).catch(() => {});
+        } else {
+          preloaderAudio.pause();
+          if (audioStatus) audioStatus.textContent = 'SOUND MUTED 🔇';
+          if (audioIcon) audioIcon.className = 'bx bx-volume-mute';
+        }
+      });
+    }
+
+    // Audio finishes playing once
+    preloaderAudio.addEventListener('ended', () => {
+      audioPlayed = true;
+      if (audioStatus) audioStatus.textContent = 'SOUND COMPLETED';
+      if (audioIcon) audioIcon.className = 'bx bx-volume';
+    });
+  }
+
   /*=============== CYBER HOLOGRAM ORB CANVAS ===============*/
   const holoCanvas = document.getElementById('preloader-hologram');
   if (holoCanvas) {

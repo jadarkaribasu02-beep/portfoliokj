@@ -364,6 +364,38 @@ button {
   align-items: center;
 }
 
+.preloader__audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  margin-top: 0.5rem;
+  background: rgba(18, 20, 29, 0.7);
+  border: 1px solid rgba(240, 185, 11, 0.4);
+  border-radius: var(--radius-pill);
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(240, 185, 11, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.preloader__audio-btn:hover {
+  background: rgba(240, 185, 11, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(240, 185, 11, 0.35);
+  transform: translateY(-2px);
+}
+
+.preloader__audio-btn i {
+  font-size: 1.1rem;
+}
+
 /*=============== THEME TOGGLE BUTTON ===============*/
 .theme-toggle-btn {
   width: 42px;
